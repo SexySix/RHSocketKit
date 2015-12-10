@@ -10,6 +10,9 @@
 #import "RHSocketConnection.h"
 #import "RHSocketDelimiterEncoder.h"
 #import "RHSocketDelimiterDecoder.h"
+#import "RHRPCRequest.h"
+#import "RHRPCResponse.h"
+#import "RHSocketReqHelper.h"
 
 NSString *const kNotificationSocketServiceState = @"kNotificationSocketServiceState";
 NSString *const kNotificationSocketPacketRequest = @"kNotificationSocketPacketRequest";
@@ -144,7 +147,14 @@ NSString *const kNotificationSocketPacketResponse = @"kNotificationSocketPacketR
 
 - (void)didEncode:(NSData *)data timeout:(NSTimeInterval)timeout tag:(NSInteger)tag
 {
-    [_connection writeData:data timeout:timeout tag:tag];
+    //Ayasofa add:
+    int serial = [RHSocketReqHelper sharedInstance].getNextReqSerialNum;
+    RHRPCRequest *req = [[RHRPCRequest alloc] initWithSerialNumber:serial];
+    [req addContent:data];
+    NSData *sdata = [req convertToData];
+    //end
+    
+    [_connection writeData:sdata timeout:timeout tag:tag];
 }
 
 #pragma mark -

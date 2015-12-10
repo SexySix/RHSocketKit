@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		28E32F341ED1FF4B26496E78 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3525CA8E0947D882E7C2A417 /* libPods.a */; };
+		477177E61C195D9C00904EA0 /* RHSocketReqHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 477177E51C195D9C00904EA0 /* RHSocketReqHelper.m */; };
+		477177E91C1962E300904EA0 /* RHRPCRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 477177E81C1962E300904EA0 /* RHRPCRequest.m */; };
+		477177EC1C1962F700904EA0 /* RHRPCResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 477177EB1C1962F700904EA0 /* RHRPCResponse.m */; };
 		8338246E1B47D411000DB52A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8338246D1B47D411000DB52A /* main.m */; };
 		833824711B47D411000DB52A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 833824701B47D411000DB52A /* AppDelegate.m */; };
 		833824741B47D411000DB52A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 833824731B47D411000DB52A /* ViewController.m */; };
@@ -43,6 +46,12 @@
 
 /* Begin PBXFileReference section */
 		3525CA8E0947D882E7C2A417 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		477177E41C195D9C00904EA0 /* RHSocketReqHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RHSocketReqHelper.h; sourceTree = "<group>"; };
+		477177E51C195D9C00904EA0 /* RHSocketReqHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RHSocketReqHelper.m; sourceTree = "<group>"; };
+		477177E71C1962E300904EA0 /* RHRPCRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RHRPCRequest.h; sourceTree = "<group>"; };
+		477177E81C1962E300904EA0 /* RHRPCRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RHRPCRequest.m; sourceTree = "<group>"; };
+		477177EA1C1962F700904EA0 /* RHRPCResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RHRPCResponse.h; sourceTree = "<group>"; };
+		477177EB1C1962F700904EA0 /* RHRPCResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RHRPCResponse.m; sourceTree = "<group>"; };
 		6D36A33B2D21FD6666C3B3DD /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		833824681B47D411000DB52A /* RHSocketKitDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RHSocketKitDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8338246C1B47D411000DB52A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -112,6 +121,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		477177E31C195D5D00904EA0 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				477177E41C195D9C00904EA0 /* RHSocketReqHelper.h */,
+				477177E51C195D9C00904EA0 /* RHSocketReqHelper.m */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
 		7D42D204DD1C3D9ACE827680 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -203,6 +221,7 @@
 		833824D01B47D793000DB52A /* RHSocketKit */ = {
 			isa = PBXGroup;
 			children = (
+				477177E31C195D5D00904EA0 /* Util */,
 				833824D11B47D793000DB52A /* Core */,
 				833824E11B47D793000DB52A /* Extend */,
 			);
@@ -243,6 +262,10 @@
 				833824E31B47D793000DB52A /* RHPacketBody.m */,
 				833824E41B47D793000DB52A /* RHPacketHead.h */,
 				833824E51B47D793000DB52A /* RHPacketHead.m */,
+				477177E71C1962E300904EA0 /* RHRPCRequest.h */,
+				477177E81C1962E300904EA0 /* RHRPCRequest.m */,
+				477177EA1C1962F700904EA0 /* RHRPCResponse.h */,
+				477177EB1C1962F700904EA0 /* RHRPCResponse.m */,
 			);
 			path = Extend;
 			sourceTree = "<group>";
@@ -268,6 +291,7 @@
 				833824651B47D411000DB52A /* Frameworks */,
 				833824661B47D411000DB52A /* Resources */,
 				D144B7BEA97B8D9BFFDC0C17 /* Copy Pods Resources */,
+				03FAED6F00FD46DED1A536F1 /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -354,6 +378,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		03FAED6F00FD46DED1A536F1 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		7E017F85D5C373BD3F2DC4DC /* Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -396,15 +435,18 @@
 				833824CF1B47D691000DB52A /* RHSocketHttpService.m in Sources */,
 				833824F81B47DAE3000DB52A /* RHSocketVariableLengthDecoder.m in Sources */,
 				833824741B47D411000DB52A /* ViewController.m in Sources */,
+				477177E61C195D9C00904EA0 /* RHSocketReqHelper.m in Sources */,
 				833824F01B47D793000DB52A /* RHPacketHead.m in Sources */,
 				833824ED1B47D793000DB52A /* RHSocketDelimiterEncoder.m in Sources */,
 				833824CE1B47D691000DB52A /* RHSocketHttpEncoder.m in Sources */,
 				833824711B47D411000DB52A /* AppDelegate.m in Sources */,
 				8338246E1B47D411000DB52A /* main.m in Sources */,
+				477177E91C1962E300904EA0 /* RHRPCRequest.m in Sources */,
 				833824CB1B47D691000DB52A /* RHPacketHttpRequest.m in Sources */,
 				833824EE1B47D793000DB52A /* RHSocketService.m in Sources */,
 				833824EF1B47D793000DB52A /* RHPacketBody.m in Sources */,
 				833824CC1B47D691000DB52A /* RHPacketHttpResponse.m in Sources */,
+				477177EC1C1962F700904EA0 /* RHRPCResponse.m in Sources */,
 				833824EB1B47D793000DB52A /* RHSocketConnection.m in Sources */,
 				833824EC1B47D793000DB52A /* RHSocketDelimiterDecoder.m in Sources */,
 				833824EA1B47D793000DB52A /* RHPacketFrame.m in Sources */,

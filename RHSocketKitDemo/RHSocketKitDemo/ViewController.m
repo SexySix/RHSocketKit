@@ -33,8 +33,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-    NSString *host = @"www.baidu.com";
-    int port = 80;
+    NSString *host = @"127.0.0.1";
+    int port = 5050;
     
     [RHSocketHttpService sharedInstance].encoder = [[RHSocketHttpEncoder alloc] init];
     [RHSocketHttpService sharedInstance].decoder = [[RHSocketHttpDecoder alloc] init];
